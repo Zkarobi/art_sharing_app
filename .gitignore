@@ -1,0 +1,46 @@
+# Ignore XAMPP configuration/log files (optional)
+*.log
+*.pid
+
+# Ignore uploads folder to avoid storing user images in the repo
+uploads/
+
+# Ignore environment/configuration files (if any)
+.env
+config.php
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore system files
+Thumbs.db
+desktop.ini
+
+# Ignore macOS files
+._*
+.Spotlight-V100
+.Trashes
+
+# Ignore Git files
+*.orig
+
+# Ignore other files (temporary and cached)
+*.bak
+*.swp
+*.tmp
+*.temp
+*.cache
+*.log
+
+# Node_modules (if you’re using any npm packages)
+node_modules/
+
+# Composer vendor folder (if using Composer for PHP dependencies)
+vendor/
+
+# Ignore any personal notes or documentation
+*.md
+notes/
+docs/
