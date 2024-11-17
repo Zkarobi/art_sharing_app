@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($user && password_verify($password, $user['password_hash'])) {
                 // Password is correct, log the user in
                 $_SESSION['username'] = $user['username'];
-                header("Location: ../index.php"); // Redirect to the homepage
+                header("Location: ../profile.php"); // Redirect to the homepage
                 exit;
             } else {
                 $errors[] = "Invalid username or password.";
@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Login</title>
 </head>
 <body>
+<?php include 'menu.php'; ?>
+
     <h1>Login</h1>
 
     <!-- Display errors if any -->

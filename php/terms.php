@@ -7,6 +7,8 @@
     <title>Terms and Conditions</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
+
     <h1>Terms and Conditions</h1>
     <p>Welcome to our Art Sharing App! By using this platform, you agree to the following terms:</p>
 

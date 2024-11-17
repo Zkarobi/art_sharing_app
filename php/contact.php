@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Contact Us</title>
 </head>
 <body>
+<?php include 'menu.php'; ?>
+
     <h1>Contact Us</h1>
 
     <!-- Success Message -->

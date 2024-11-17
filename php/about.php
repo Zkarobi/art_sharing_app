@@ -7,6 +7,10 @@
     <title>About</title>
 </head>
 <body>
+
+<?php include 'menu.php'; ?>
+
+
     <h1>About This App</h1>
     <p>Welcome to our Art Sharing App! This platform is designed to inspire creativity and connect artists through random art prompts.</p>
     <p>Features:</p>

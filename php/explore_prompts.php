@@ -30,6 +30,8 @@ try {
     <title>Explore Prompts</title>
 </head>
 <body>
+<?php include 'menu.php'; ?>
+
     <h1>Explore Prompts</h1>
 
     <!-- Category Filter -->

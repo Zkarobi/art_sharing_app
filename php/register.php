@@ -65,6 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Register</title>
 </head>
 <body>
+<?php include 'menu.php'; ?>
+
     <h1>Register</h1>
 
     <!-- Display errors if any -->
@@ -93,6 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" id="confirm_password" name="confirm_password" required>
         
         <button type="submit">Register</button>
+
     </form>
+    <script src="../js/validation.js"></script>
+
 </body>
 </html>
