@@ -36,11 +36,7 @@ try {
     <?php include 'php/menu.php'; ?>
 
 
-    <!-- Welcome Section -->
-    <header>
-        <h1>Welcome to the Art Sharing App</h1>
-        <p>Get inspired by random art prompts and share your creativity with the world.</p>
-    </header>
+
 
     <!-- Prompt Generator -->
     <section>
