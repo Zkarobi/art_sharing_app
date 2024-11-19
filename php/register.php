@@ -67,21 +67,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include 'menu.php'; ?>
 
-    <h1>Register</h1>
+    <header>
+        <h1>Register</h1>
+    </header>
 
-    <!-- Display errors if any -->
-    <?php if (!empty($errors)): ?>
-        <div class="errors">
-            <ul>
-                <?php foreach ($errors as $error): ?>
-                    <li><?php echo htmlspecialchars($error); ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    <?php endif; ?>
+<!-- Display errors if any -->
+<div class="errors" style="<?php echo empty($errors) ? 'display: block;' : ''; ?>">
+    <ul>
+        <?php if (!empty($errors)): ?>
+            <?php foreach ($errors as $error): ?>
+                <li><?php echo htmlspecialchars($error); ?></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </ul>
+</div>
+
 
     <!-- Registration form -->
-    <form method="POST" action="register.php">
+    <form id="registerForm" method="POST" action="register.php" novalidate>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         
@@ -95,8 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" id="confirm_password" name="confirm_password" required>
         
         <button type="submit">Register</button>
-
     </form>
+
     <script src="../js/validation.js"></script>
 
 </body>
