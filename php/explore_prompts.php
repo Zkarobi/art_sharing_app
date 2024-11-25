@@ -1,6 +1,6 @@
 <?php
 require 'config.php'; // Include the database connection
-
+$page_title = "Explore Prompts"; // Page-specific title
 $category = $_GET['category'] ?? 'All'; // Get selected category or default to 'All'
 
 try {
@@ -30,37 +30,40 @@ try {
     <title>Explore Prompts</title>
 </head>
 <body>
-<?php include 'menu.php'; ?>
+    <?php include 'menu.php'; ?>
+   
 
-    <h1>Explore Prompts</h1>
+   
 
     <!-- Category Filter -->
-    <form method="GET" action="explore_prompts.php">
-        <label for="category">Choose a category:</label>
-        <select name="category" id="category">
-            <option value="All" <?php echo $category === 'All' ? 'selected' : ''; ?>>All</option>
-            <?php foreach ($categories as $cat): ?>
-                <option value="<?php echo htmlspecialchars($cat['category']); ?>" 
-                    <?php echo $category === $cat['category'] ? 'selected' : ''; ?>>
-                    <?php echo htmlspecialchars($cat['category']); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <button type="submit">Filter</button>
-    </form>
+    <section>
+        <form method="GET" action="explore_prompts.php" class="filter-form">
+            <label for="category">Filter by Category:</label>
+            <select name="category" id="category">
+                <option value="All" <?php echo $category === 'All' ? 'selected' : ''; ?>>All</option>
+                <?php foreach ($categories as $cat): ?>
+                    <option value="<?php echo htmlspecialchars($cat['category']); ?>" 
+                        <?php echo $category === $cat['category'] ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($cat['category']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Apply Filter</button>
+        </form>
+    </section>
 
     <!-- Display Prompts -->
-    <?php if (!empty($prompts)): ?>
-        <ul>
+    <section class="prompts-container">
+        <?php if (!empty($prompts)): ?>
             <?php foreach ($prompts as $prompt): ?>
-                <li>
-                    <strong><?php echo htmlspecialchars($prompt['category']); ?>:</strong>
-                    <?php echo htmlspecialchars($prompt['prompt_text']); ?>
-                </li>
+                <div class="prompt-card">
+                    <h3><?php echo htmlspecialchars($prompt['category']); ?></h3>
+                    <p><?php echo htmlspecialchars($prompt['prompt_text']); ?></p>
+                </div>
             <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>No prompts available in this category.</p>
-    <?php endif; ?>
+        <?php else: ?>
+            <p>No prompts available in this category.</p>
+        <?php endif; ?>
+    </section>
 </body>
 </html>

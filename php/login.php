@@ -1,7 +1,7 @@
 <?php
 require 'config.php'; // Include the database connection
 session_start(); // Start a session for user login
-
+$page_title = "Login";
 $errors = []; // Initialize an array to store error messages
 
 // Check if the form is submitted
@@ -52,9 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include 'menu.php'; ?>
 
-    <header>
-    <h1>Login</h1>
-    </header>
 
     <!-- Display errors if any -->
     <?php if (!empty($errors)): ?>

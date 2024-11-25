@@ -1,5 +1,6 @@
 <?php
 require 'php/config.php'; // Include database connection
+$page_title = "Welcome to Muse"; // Define the title
 
 // Enable error reporting for debugging
 ini_set('display_errors', 1);

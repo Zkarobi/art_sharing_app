@@ -1,26 +1,46 @@
+<?php
+require 'config.php'; // Include the database connection
+$page_title = "About Us"; // Page-specific title
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Adjust path if in the root -->
-    <title>About</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>About Us</title>
 </head>
 <body>
+    <?php include 'menu.php'; ?>
 
-<?php include 'menu.php'; ?>
+  \
 
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <h2>Welcome to Muse</h2>
+            <p>
+                Muse is an art-sharing platform designed to inspire creativity and bring artists together. 
+                Whether you're looking for inspiration through random art prompts or sharing your creations with the world, 
+                Muse is the perfect place to explore and express your artistic talents.
+            </p>
+            <p>
+                Our mission is to foster a community where artists can connect, collaborate, and celebrate their work.
+                From beginners to professionals, Muse is here to provide a welcoming and encouraging space for all.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="../images/art.jpg" alt="Art Inspiration">
+        </div>
+    </section>
 
-    <h1>About This App</h1>
-    <p>Welcome to our Art Sharing App! This platform is designed to inspire creativity and connect artists through random art prompts.</p>
-    <p>Features:</p>
-    <ul>
-        <li>Generate random art prompts tailored to your interests</li>
-        <li>Share your artwork with the community</li>
-        <li>Edit and manage your posts easily</li>
-    </ul>
-    <p>Start creating and sharing today!</p>
+    <!-- Call to Action -->
+    <section class="call-to-action">
+        <h3>Ready to Get Started?</h3>
+        <p>Generate your first art prompt or share your masterpiece with the world!</p>
+        <!--<a href="index.php" class="cta-button">Explore Prompts</a>-->
+        <a href="<?php echo $base_url; ?>index.php" class="cta-button">Explore Prompts</a>
 
-    <p><a href="../index.php">Go Back to Home</a></p> <!-- Adjust link if applicable -->
+    </section>
 </body>
 </html>

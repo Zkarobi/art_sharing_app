@@ -11,8 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // For now, we'll just confirm the submission
     $success = true;
 }
-?>
 
+$page_title = "Contact Us"; // Page-specific title
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,29 +23,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Contact Us</title>
 </head>
 <body>
-<?php include 'menu.php'; ?>
+    <?php include 'menu.php'; ?>
 
-    <h1>Contact Us</h1>
+    
+    <!-- Main Content -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Success Message -->
+            <?php if ($success): ?>
+                <div class="success-message">
+                    <p>Thank you for your message! We’ll get back to you soon.</p>
+                </div>
+            <?php endif; ?>
 
-    <!-- Success Message -->
-    <?php if ($success): ?>
-        <p style="color: green;">Thank you for your message! We’ll get back to you soon.</p>
-    <?php endif; ?>
+            <!-- Contact Form -->
+            <h2>We’d Love to Hear from You!</h2>
+            <p>If you have any questions, suggestions, or feedback, feel free to drop us a message below.</p>
+            <form method="POST" action="contact.php" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-    <!-- Contact Form -->
-    <form method="POST" action="contact.php">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Send</button>
-    </form>
-
-    <p><a href="../index.php">Go Back to Home</a></p> <!-- Adjust link if needed -->
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>

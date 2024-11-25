@@ -1,6 +1,7 @@
 <?php
 require 'config.php'; // Include the database connection
 session_start(); // Start a session for user login
+$page_title = "Register";
 
 $errors = []; // Initialize an array to store error messages
 
@@ -67,9 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include 'menu.php'; ?>
 
-    <header>
-        <h1>Register</h1>
-    </header>
 
 <!-- Display errors if any -->
 <div class="errors" style="<?php echo empty($errors) ? 'display: block;' : ''; ?>">
@@ -84,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <!-- Registration form -->
+     <section>
     <form id="registerForm" method="POST" action="register.php" novalidate>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -99,6 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <button type="submit">Register</button>
     </form>
+    </section>
 
     <script src="../js/validation.js"></script>
 
