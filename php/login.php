@@ -52,7 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include 'menu.php'; ?>
 
+    <header>
     <h1>Login</h1>
+    </header>
 
     <!-- Display errors if any -->
     <?php if (!empty($errors)): ?>
@@ -66,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <!-- Login form -->
+    <section>
     <form method="POST" action="login.php" novalidate>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -75,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <button type="submit">Login</button>
     </form>
+    </section>
     <script src="../js/login_validation.js"></script>
 </body>
 </html>
