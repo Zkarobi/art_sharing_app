@@ -13,7 +13,7 @@ $page_title = "About Us"; // Page-specific title
 <body>
     <?php include 'menu.php'; ?>
 
-  \
+  
 
     <!-- About Section -->
     <section class="about-section">
