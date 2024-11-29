@@ -48,13 +48,16 @@ try {
         <?php if (!empty($posts)): ?>
             <?php foreach ($posts as $post): ?>
                 <div class="post-card">
-                    <img src="../uploads/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image">
+                    <a href="image_detail.php?post_id=<?php echo $post['post_id']; ?>">
+                        <img src="../uploads/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image">
+                    </a>
                     <div class="post-details">
                         <p><strong><?php echo htmlspecialchars($post['username']); ?></strong></p>
                         <p><?php echo htmlspecialchars($post['caption']); ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
+
         <?php else: ?>
             <p class="no-posts">No posts available to discover. <a href="create_post.php" class="create-post-link">Create a new post</a>.</p>
         <?php endif; ?>

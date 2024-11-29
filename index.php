@@ -2,6 +2,11 @@
 require 'php/config.php'; // Include database connection
 $page_title = "Welcome to Muse"; // Define the title
 
+// Update title if the user is logged in
+if (isset($_SESSION['username'])) {
+    $page_title = "Welcome to Muse, " . htmlspecialchars($_SESSION['username']);
+}
+
 // Enable error reporting for debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -30,13 +35,12 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Art Sharing App - Home</title>
+    <title><?php echo $page_title; ?></title>
+
 </head>
 <body>
     <!-- Navigation Menu -->
     <?php include 'php/menu.php'; ?>
-
-
 
 
     <!-- Prompt Generator -->

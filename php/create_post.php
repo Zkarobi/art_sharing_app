@@ -69,20 +69,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <section class="create-post-section">
         <h2>Create a New Post</h2>
-
         <form method="POST" action="create_post.php" enctype="multipart/form-data">
             <label for="caption">Caption:</label>
             <textarea id="caption" name="caption" required></textarea>
 
             <label for="image">Upload Image:</label>
             <input type="file" id="image" name="image" accept="image/*" required>
+            
             <!-- Preview Container -->
             <div class="image-preview-container">
-                <img id="image-preview" alt="Image Preview" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd; margin-top: 10px;">
+                <img id="image-preview" alt="Image Preview" style="display: none; max-width: 100%; border: 1px solid #ddd; margin-top: 10px;">
+            </div>
+
+            <!-- Resize Controls -->
+            <div id="resize-container" style="display: none; margin-top: 10px;">
+                <label for="resize-width">Width:</label>
+                <input type="number" id="resize-width" value="300" style="width: 80px;">
+                <label for="resize-height">Height:</label>
+                <input type="number" id="resize-height" value="200" style="width: 80px;">
             </div>
 
             <button type="submit">Post</button>
         </form>
+
     </section>
 
     <!-- Link to the external JavaScript file -->
