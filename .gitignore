@@ -41,6 +41,5 @@ node_modules/
 vendor/
 
 # Ignore any personal notes or documentation
-*.md
 notes/
 docs/
