@@ -56,38 +56,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Adjust path as needed -->
     <title>Create Post</title>
 </head>
 <body>
-    <h1>Create a New Post</h1>
+<?php include 'menu.php'; ?>
 
-    <!-- Display errors if any -->
-    <?php if (!empty($errors)): ?>
-        <div class="errors">
-            <ul>
-                <?php foreach ($errors as $error): ?>
-                    <li><?php echo htmlspecialchars($error); ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-    <?php endif; ?>
+    <section class="create-post-section">
+        <h2>Create a New Post</h2>
 
-    <!-- Form for creating a new post -->
-    <form method="POST" action="create_post.php" enctype="multipart/form-data">
-        <label for="caption">Caption:</label>
-        <textarea id="caption" name="caption" required></textarea>
+        <form method="POST" action="create_post.php" enctype="multipart/form-data">
+            <label for="caption">Caption:</label>
+            <textarea id="caption" name="caption" required></textarea>
 
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <!-- Preview Container -->
+            <div class="image-preview-container">
+                <img id="image-preview" alt="Image Preview" style="display: none; max-width: 100%; height: auto; border: 1px solid #ddd; margin-top: 10px;">
+            </div>
 
-        <button type="submit">Create Post</button>
-    </form>
+            <button type="submit">Post</button>
+        </form>
+    </section>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../js/image_preview.js"></script>
 </body>
 </html>

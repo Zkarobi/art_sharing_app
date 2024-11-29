@@ -16,6 +16,8 @@ try {
 } catch (PDOException $e) {
     die("Error fetching user posts: " . $e->getMessage());
 }
+
+$page_title = "Your Profile";
 ?>
 
 <!DOCTYPE html>
@@ -27,26 +29,35 @@ try {
     <title>Your Profile</title>
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+    <?php include 'php/menu.php'; ?>
+
+    <!-- Profile Header -->
+    <section class="profile-header">
+        <div class="profile-info">
+            <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+            <p>View, edit, or delete your posts below.</p>
+            <a href="php/create_post.php" class="create-post-button">+ Create New Post</a>
+        </div>
+    </section>
 
     <!-- Display user-specific posts -->
-    <h2>Your Posts</h2>
-    <?php if (!empty($posts)): ?>
-        <ul>
+    <section class="posts-gallery">
+        <?php if (!empty($posts)): ?>
             <?php foreach ($posts as $post): ?>
-                <li>
-                    <strong><?php echo htmlspecialchars($post['caption']); ?></strong><br>
-                    <img src="uploads/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image" style="max-width:200px;"><br>
-                    <a href="php/edit_post.php?post_id=<?php echo $post['post_id']; ?>">Edit</a> |
-                    <a href="php/delete_post.php?post_id=<?php echo $post['post_id']; ?>">Delete</a>
-                </li>
+                <div class="post-card">
+                    <img src="uploads/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image">
+                    <div class="post-details">
+                        <p><?php echo htmlspecialchars($post['caption']); ?></p>
+                        <div class="post-actions">
+                            <a href="php/edit_post.php?post_id=<?php echo $post['post_id']; ?>" class="edit-button">Edit</a>
+                            <a href="php/delete_post.php?post_id=<?php echo $post['post_id']; ?>" class="delete-button">Delete</a>
+                        </div>
+                    </div>
+                </div>
             <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>You haven’t shared any artwork yet. <a href="php/create_post.php">Create a new post</a></p>
-    <?php endif; ?>
-
-    <!-- Logout link -->
-    <p><a href="php/logout.php">Logout</a></p>
+        <?php else: ?>
+            <p class="no-posts">You haven’t shared any artwork yet. <a href="php/create_post.php" class="create-post-link">Create a new post</a></p>
+        <?php endif; ?>
+    </section>
 </body>
 </html>

@@ -33,6 +33,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="<?php echo $base_url; ?>php/about.php">About</a>
             <a href="<?php echo $base_url; ?>php/contact.php">Contact Us</a>
             <a href="<?php echo $base_url; ?>php/terms.php">Terms and Conditions</a>
+            <a href="<?php echo $base_url; ?>php/feed.php">Feed</a>
         </div>
 
     </nav>
