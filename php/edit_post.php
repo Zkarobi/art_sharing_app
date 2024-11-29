@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit;
 }
-
+$page_title = "Edit Post";
 require 'config.php'; // Include the database connection
 
 $post_id = $_GET['post_id'] ?? null; // Get post ID from the query string
@@ -49,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,28 +58,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Edit Post</title>
 </head>
 <body>
-    <h1>Edit Post</h1>
+    <?php include 'menu.php'; ?>
 
-    <?php if ($success): ?>
-        <p style="color: green;">Post updated successfully! <a href="../profile.php">Back to profile</a></p>
-    <?php endif; ?>
+    <section class="edit-post-container">
+       
 
-    <?php if (!empty($errors)): ?>
-        <div class="errors">
-            <ul>
-                <?php foreach ($errors as $error): ?>
-                    <li><?php echo htmlspecialchars($error); ?></li>
-                <?php endforeach; ?>
-            </ul>
+        <?php if ($success): ?>
+            <p class="success-message">Post updated successfully! <a href="../profile.php">Back to profile</a></p>
+        <?php endif; ?>
+
+        <?php if (!empty($errors)): ?>
+            <div class="errors">
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo htmlspecialchars($error); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+        <div class="edit-post-card">
+            <div class="image-preview-section">
+                <h2>Image Preview</h2>
+                <img src="../uploads/<?php echo htmlspecialchars($post['image_path']); ?>" alt="Post Image" class="edit-post-image">
+            </div>
+
+            <form method="POST" action="edit_post.php?post_id=<?php echo htmlspecialchars($post_id); ?>" class="edit-post-form">
+                <label for="caption">Edit Caption:</label>
+                <textarea id="caption" name="caption" required oninput="updateCaptionPreview()"><?php echo htmlspecialchars($post['caption']); ?></textarea>
+                
+
+
+                <button type="submit" class="update-button">Update Post</button>
+                <a href="../profile.php" class="cancel-button">Cancel</a>
+            </form>
         </div>
-    <?php endif; ?>
+    </section>
 
-    <form method="POST" action="edit_post.php?post_id=<?php echo htmlspecialchars($post_id); ?>">
-        <label for="caption">Caption:</label>
-        <textarea id="caption" name="caption" required><?php echo htmlspecialchars($post['caption']); ?></textarea>
-        <button type="submit">Update Post</button>
-    </form>
-
-    <p><a href="../profile.php">Cancel</a></p>
+    <script>
+        function updateCaptionPreview() {
+            const captionInput = document.getElementById('caption');
+            const captionPreview = document.getElementById('caption-preview');
+            captionPreview.textContent = captionInput.value;
+        }
+    </script>
 </body>
 </html>

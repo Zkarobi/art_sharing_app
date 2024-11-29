@@ -709,6 +709,7 @@ body {
     font-size: 1rem;
     width: 80px;
 }
+
 /* Image Detail Page */
 .image-detail {
     max-width: 800px;
@@ -796,4 +797,104 @@ body {
 .go-back-button:hover {
     background-color: #2980b9;
     transform: scale(1.05);
+}
+
+
+/* Edit Post Container */
+.edit-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Edit Post Card */
+.edit-post-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Image Preview */
+.image-preview-section {
+    margin-bottom: 20px;
+}
+
+.edit-post-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Form Styles */
+.edit-post-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.edit-post-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.update-button, .cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Update Button */
+.update-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.update-button:hover {
+    background-color: #2980b9;
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+
+}
+
+.cancel-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Success Message */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
 }
