@@ -66,15 +66,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Login form -->
     <section>
-    <form method="POST" action="login.php" novalidate>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <button type="submit">Login</button>
-    </form>
+        <form method="POST" action="login.php" novalidate>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Register button -->
+        <div class="register-link">
+            <p>Don't have an account?</p>
+            <a href="register.php" class="register-button">Register</a>
+        </div>
+
     </section>
     <script src="../js/login_validation.js"></script>
 </body>

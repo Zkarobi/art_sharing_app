@@ -171,11 +171,13 @@ form button {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
 form button:hover {
     background-color: #2980b9;
+    transform: scale(1.05);
 }
 section p {
     font-size: 1.2rem;
@@ -743,4 +745,55 @@ body {
     text-align: center;
     color: red;
     font-size: 1.2rem;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.register-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.register-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.go-back-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.go-back-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
 }

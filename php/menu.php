@@ -1,5 +1,8 @@
 <?php
-session_start(); // Start the session to check login status
+// Start the session only if it's not already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); 
+}
 
 // Dynamically calculate the base URL
 $base_url = '/art_sharing_app/';
@@ -10,7 +13,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <header class="page-header">
     <?php if ($current_page === 'index.php'): ?>
         <!-- Homepage Header -->
-        <h1 class="page-title"><?php echo isset($page_title) ? htmlspecialchars($page_title) : ''; ?></h1>
+        <?php if (isset($_SESSION['username'])): ?>
+            <h1 class="page-title">Welcome to Muse, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+        <?php else: ?>
+            <h1 class="page-title">Welcome to Muse</h1>
+        <?php endif; ?>
     <?php else: ?>
         <!-- Other Pages Header -->
         <a href="<?php echo $base_url; ?>index.php" class="muse-button">Muse</a>
@@ -35,7 +42,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <a href="<?php echo $base_url; ?>php/terms.php">Terms and Conditions</a>
             <a href="<?php echo $base_url; ?>php/feed.php">Feed</a>
         </div>
-
     </nav>
 </header>
 <!-- Link the JavaScript file -->

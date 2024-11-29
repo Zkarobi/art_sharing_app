@@ -42,11 +42,14 @@ if ($post_id) {
                 <p>Uploaded by: <strong><?php echo htmlspecialchars($post['username']); ?></strong></p>
                 <p>Uploaded on: <?php echo htmlspecialchars($post['created_at']); ?></p> <!-- Assuming created_at exists -->
             </div>
+            <!-- Navigation Buttons -->
+            <div class="navigation-buttons">
+                <a href="feed.php" class="go-back-button">Go Back to Feed</a>
+                <a href="../profile.php" class="go-back-button">Go Back to Profile</a>
+            </div>
         </section>
     <?php else: ?>
         <p class="error-message">The post you are looking for does not exist.</p>
     <?php endif; ?>
-
-    <p><a href="feed.php">Go Back to Feed</a></p>
 </body>
 </html>
