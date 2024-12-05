@@ -3,7 +3,7 @@ Muse is a platform where users can upload, share, and discover artwork. Inspired
 
 ## Instructions on how to access:
 - Link: http://muse.us-east-1.elasticbeanstalk.com/index.php
--**Important Note**:
+- **Important Note**:
 - All pages are functional except for the Register page, due to domain setup issues:
     - The Register page currently throws a security error because HTTPS is not enabled (pending domain registration).
 - **Testing Instructions**:
