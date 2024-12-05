@@ -4,12 +4,12 @@ Muse is a platform where users can upload, share, and discover artwork. Inspired
 ## Instructions on how to access:
 - Link: http://muse.us-east-1.elasticbeanstalk.com/index.php
 - **Important Note**:
-- All pages are functional except for the Register page, due to domain setup issues:
-    - The Register page currently throws a security error because HTTPS is not enabled (pending domain registration).
-- **Testing Instructions**:
-    - To test the JavaScript validation, please use the Login page with the following test user credentials:
-        Username: luna
-        Password: 123456
+    - All pages are functional except for the Register page, due to domain setup issues:
+        - The Register page currently throws a security error because HTTPS is not enabled (pending domain registration).
+    - **Testing Instructions**:
+        - To test the JavaScript validation, please use the Login page with the following test user credentials:
+            Username: luna
+            Password: 123456
 
 ## Features
 - **10+ Pages for Navigation**:
@@ -36,6 +36,7 @@ Muse is a platform where users can upload, share, and discover artwork. Inspired
 - **Back-End**: PHP, MySQL
 - **Database**: MySQL
 - **Version Control**: Git and GitHub
+- **Deployment**: AWS Elastic Beanstalk
 
 ## Challenges
 - **Issues with XAMPP Database Connections**:
