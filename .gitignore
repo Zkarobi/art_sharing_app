@@ -43,3 +43,8 @@ vendor/
 # Ignore any personal notes or documentation
 notes/
 docs/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

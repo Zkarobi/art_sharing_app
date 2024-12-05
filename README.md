@@ -1,5 +1,15 @@
 ## Overview
-The Art Sharing App is a platform where users can upload, share, and discover artwork. Inspired by platforms like Instagram and Pinterest, it allows users to explore and generate random art prompts, create posts, and interact with a feed of content shared by others.
+Muse is a platform where users can upload, share, and discover artwork. Inspired by platforms like Instagram and Pinterest, it allows users to explore and generate random art prompts, create posts, and interact with a feed of content shared by others.
+
+## Instructions on how to access:
+- Link: http://muse.us-east-1.elasticbeanstalk.com/index.php
+-**Important Note**:
+- All pages are functional except for the Register page, due to domain setup issues:
+    - The Register page currently throws a security error because HTTPS is not enabled (pending domain registration).
+- **Testing Instructions**:
+    - To test the JavaScript validation, please use the Login page with the following test user credentials:
+        Username: luna
+        Password: 123456
 
 ## Features
 - **10+ Pages for Navigation**:
@@ -21,25 +31,11 @@ The Art Sharing App is a platform where users can upload, share, and discover ar
     - Allows users to upload images for posts.
     - Includes features to preview and resize images before uploading.
 
-- **Responsive Design**:
-    - Designed for responsiveness, ensuring usability across devices of various screen sizes.
-
 ## Technologies Used
 - **Front-End**: HTML, CSS, JavaScript
 - **Back-End**: PHP, MySQL
 - **Database**: MySQL
 - **Version Control**: Git and GitHub
-
-## Process
-- **Planning**: Designed the app layout and features.
-- **Development**: 
-    - Built user authentication and session management.
-    - Designed database schema for users, posts, and prompts.
-    - Implemented the front-end with responsive design principles.
-- **Testing**:
-    - Created test accounts to verify functionality.
-    - Debugged and fixed issues with image uploads and display.
-    - Version Control: Committed changes regularly
 
 ## Challenges
 - **Issues with XAMPP Database Connections**:
@@ -64,3 +60,5 @@ The Art Sharing App is a platform where users can upload, share, and discover ar
 - **Search Functionality**: Add search/filter options for posts and users.
 - **follow functionality**: Add follow/friend feature for registered users.
 - **API Integration**: Use external APIs for additional art prompts.
+
+

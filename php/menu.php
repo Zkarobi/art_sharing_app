@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Dynamically calculate the base URL
-$base_url = '/art_sharing_app/';
+$base_url = '/';
 
 // Determine the current page
 $current_page = basename($_SERVER['PHP_SELF']);
